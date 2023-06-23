@@ -25,14 +25,14 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(Particle, ShotPoint.position, transform.rotation);
+                Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
                 ReloadTime = StartReloadTime;
 
             }
-            else
-            {
-                ReloadTime -= Time.deltaTime;
-            }
+        }
+        else
+        {
+            ReloadTime -= Time.deltaTime;
         }
     }
 }

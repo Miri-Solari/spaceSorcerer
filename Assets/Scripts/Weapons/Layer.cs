@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Layer : MonoBehaviour
 {
-    public El_type Temp_El;
+    public El_Type Temp_El;
     public float Temp_Dmg;
 
-    public El_type Elem {  get; private set; }
+    public El_Type Elem {  get; private set; }
     public float Dmg { get; private set; }
 
     
@@ -16,6 +16,11 @@ public class Layer : MonoBehaviour
     {
         Elem = Temp_El;
         Dmg = Temp_Dmg;
+    }
+
+    void GiveEffect(Unit Uni)
+    {
+
     }
 
 }

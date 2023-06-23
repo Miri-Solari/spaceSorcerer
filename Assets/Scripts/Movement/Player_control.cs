@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Android;
 
 public class Player_control : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class Player_control : MonoBehaviour
     public Joystick joystick;
     public float Speed;
     public enum ControlType { PC, Android}
-    private Vector2 direct;
+    public Vector2 direct;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
