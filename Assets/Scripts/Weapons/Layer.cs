@@ -6,6 +6,7 @@ public class Layer : MonoBehaviour
 {
     public El_Type Temp_El;
     public float Temp_Dmg;
+    public Effect Effect;
 
     public El_Type Elem {  get; private set; }
     public float Dmg { get; private set; }
@@ -20,7 +21,7 @@ public class Layer : MonoBehaviour
 
     void GiveEffect(Unit Uni)
     {
-
+        
     }
 
 }

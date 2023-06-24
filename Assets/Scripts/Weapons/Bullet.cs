@@ -13,6 +13,23 @@ public class Bullet : MonoBehaviour
     public Layer Layer_Mid { get; private set; }
     public Layer Layer_Inn { get; private set; }
 
+
+    public (float, El_Type) GiveOutLayerStats()
+    {
+        return (Layer_Out.Dmg, Layer_Out.Elem);
+    }
+
+    public (float, El_Type) GiveMidLayerStats()
+    {
+        return (Layer_Mid.Dmg, Layer_Mid.Elem);
+    }
+
+    public (float, El_Type) GiveInnLayerStats()
+    {
+        return (Layer_Inn.Dmg, Layer_Inn.Elem);
+    }
+
+
     void Start()
     {
 

@@ -45,10 +45,26 @@ public class Base_Partical : MonoBehaviour
     {
         if (collision.gameObject.tag == "Unit")
         {
-            
-            collision.collider.GetComponent<Unit>().TakeDamege(Damage, Projectile.);
+            Unit Attacked = collision.collider.GetComponent<Unit>();
+            GiveDamage(Attacked);
+            Influence(Attacked);
             Destroy(gameObject);
         }
+
+    }
+
+
+    private void GiveDamage(Unit TakenDamage)
+    {
+        (float, El_Type) temp = Projectile.GiveOutLayerStats();
+        TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
+        temp = Projectile.GiveMidLayerStats();
+        TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
+        temp = Projectile.GiveInnLayerStats();
+        TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
+    }
+    private void Influence(Unit Affected)
+    {
 
     }
 
