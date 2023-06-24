@@ -8,7 +8,7 @@ public class Player_control : MonoBehaviour
 {
     public ControlType controlType;
     public Joystick joystick;
-    public float Speed;
+    public Player Unit;
     public enum ControlType { PC, Android}
     public Vector2 direct;
     private Rigidbody2D rb;
@@ -32,7 +32,6 @@ public class Player_control : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
-        rb.MovePosition(rb.position + direct * Time.deltaTime * Speed); 
+        rb.MovePosition(rb.position + direct * Time.deltaTime * Unit.Speed); 
     }
 }

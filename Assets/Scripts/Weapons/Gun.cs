@@ -7,8 +7,14 @@ public class Gun : MonoBehaviour
     public float offset;
     public Base_Partical Particle;
     public Transform ShotPoint;
+    public float DmgMulti;
     public float StartReloadTime;
+    public Partical_Form Form;
+
     private float ReloadTime;
+    
+
+
     void Start()
     {
         
@@ -25,6 +31,7 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Particle.Temp_DamageMulti = DmgMulti;
                 Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
                 ReloadTime = StartReloadTime;
 
