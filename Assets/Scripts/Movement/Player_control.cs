@@ -32,7 +32,6 @@ public class Player_control : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
         rb.MovePosition(rb.position + direct * Time.deltaTime * Unit.Speed); 
     }
 }

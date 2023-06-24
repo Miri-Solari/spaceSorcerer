@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour
     public double MinRes { get; private set; }
 
 
+
     void Start()
     {
         gameObject.tag = "Unit";
@@ -21,7 +22,7 @@ public class Unit : MonoBehaviour
 
     void Update()
     {
-        if (HP < 0)
+        if (HP <= 0)
         {
             Destroy(gameObject);
         }
@@ -29,7 +30,12 @@ public class Unit : MonoBehaviour
 
     public void TakeDamege(double dmg, El_Type Elem)
     {
-        HP -= Convert.ToInt32(dmg * (1 - Resistances[Elem.Num_El]));
+
+        if (Elem != null)
+        {
+            HP -= Convert.ToInt32(dmg * (1 - Resistances[Elem.Num_El] / 100));
+            print($"Нанесён урон: {Convert.ToInt32(dmg * (1 - Resistances[Elem.Num_El] / 100))}");
+        }
     }
 
     public Gun GiveGun()

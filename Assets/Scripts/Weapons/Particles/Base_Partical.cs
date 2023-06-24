@@ -38,7 +38,7 @@ public class Base_Partical : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector2.up * Speed);
+        transform.Translate(Vector2.right * Speed);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -49,6 +49,7 @@ public class Base_Partical : MonoBehaviour
             GiveDamage(Attacked);
             Influence(Attacked);
             Destroy(gameObject);
+            
         }
 
     }
@@ -57,11 +58,16 @@ public class Base_Partical : MonoBehaviour
     private void GiveDamage(Unit TakenDamage)
     {
         (float, El_Type) temp = Projectile.GiveOutLayerStats();
+        print(temp.Item2);
+
         TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
+        print(temp.Item2);
         temp = Projectile.GiveMidLayerStats();
         TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
         temp = Projectile.GiveInnLayerStats();
+        print(temp.Item2);
         TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
+        print("_________");
     }
     private void Influence(Unit Affected)
     {
