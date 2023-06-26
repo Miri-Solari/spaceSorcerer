@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour
     public float Speed;
     public Gun Weapon;
     public double[] Resistances = new double[6];
+    public bool IsAffected = false;
     public double MinRes { get; private set; }
 
 

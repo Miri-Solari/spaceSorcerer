@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Base_Partical : MonoBehaviour
@@ -18,12 +19,17 @@ public class Base_Partical : MonoBehaviour
 
 
 
+    public void SetLayerOutDmg(float dmg)
+    {
+        Projectile.SetLayerOutDmg(dmg);
+    }
     private void Start()
     {
 
         Speed = Temp_Speed/10;
         Lifetime = Temp_Lifetime;
         DamageMulti = Temp_DamageMulti;
+
     }
 
     private void Update()
@@ -32,6 +38,7 @@ public class Base_Partical : MonoBehaviour
         Speed -= Time.deltaTime * slowdown/500;
         if (Speed < 0 | Lifetime < 0)
         {
+            Destroy(Projectile.Effect.gameObject);
             Destroy(gameObject);
         }
     }
@@ -45,9 +52,11 @@ public class Base_Partical : MonoBehaviour
     {
         if (collision.gameObject.tag == "Unit")
         {
+
             Unit Attacked = collision.collider.GetComponent<Unit>();
             GiveDamage(Attacked);
             Influence(Attacked);
+            Projectile.Effect.gameObject.SetActive(true);
             Destroy(gameObject);
             
         }
@@ -58,20 +67,16 @@ public class Base_Partical : MonoBehaviour
     private void GiveDamage(Unit TakenDamage)
     {
         (float, El_Type) temp = Projectile.GiveOutLayerStats();
-        print(temp.Item2);
-
         TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
-        print(temp.Item2);
         temp = Projectile.GiveMidLayerStats();
         TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
         temp = Projectile.GiveInnLayerStats();
-        print(temp.Item2);
         TakenDamage.TakeDamege(temp.Item1 * DamageMulti, temp.Item2);
-        print("_________");
     }
     private void Influence(Unit Affected)
     {
-
+        print($"инфлюенс работает {Projectile.Effect.Multi}");
+        Projectile.GiveEffect(Affected);
     }
 
 }
