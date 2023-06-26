@@ -16,7 +16,10 @@ public class Effect : MonoBehaviour
     private float Speed;
 
 
-    // Start is called before the first frame update
+    public void SetAffected(Unit affected)
+    {
+        Affected = affected;
+    }
     void Start()
     {
         for (int i = 0; i < 6; i++)
@@ -24,30 +27,11 @@ public class Effect : MonoBehaviour
             Resistances[i] = Affected.Resistances[i];
         }
         Speed = Affected.Speed;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (time < 0)
-        {
-            for (int i = 0; i < 6; i++)
-            {
-                Affected.Resistances[i] = Resistances[i];
-            }
-            Affected.Speed = Speed;
-            Destroy(gameObject);
-        }
-        
-    }
-
-    private void FixedUpdate()
-    {
-        time -= 0.02f;
+        print(Elem);
         switch (Type)
         {
             case EffectType.Fire:
-                if (time % 0.5 == 0) Fire(Affected.GiveGun().DmgMulti);
+                InvokeRepeating(nameof(Fire), 0f, 0.5f); // Add GiveGun
                 break;
 
             case EffectType.Oxy:
@@ -69,13 +53,41 @@ public class Effect : MonoBehaviour
                 Stun();
                 break;
         }
+    }
+
+
+    void Update()
+    {
+        if (time <= 0)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                Affected.Resistances[i] = Resistances[i];
+            }
+            Affected.Speed = Speed;
+            Affected.IsAffected = false;
+            Destroy(gameObject);
+        }
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (time <=0) 
+        {
+            
+            Destroy(gameObject);
+        }
+        time -= 0.02f;
+        
         
         
     }
 
-    void Fire(float multi)
+    void Fire()
     {
-        Affected.TakeDamege(multi*0.25f, Elem);
+        print($"я ебал вашу маму{Multi}");
+        Affected.TakeDamege(Multi*0.5f, Elem);
     }
 
 
@@ -122,4 +134,6 @@ public class Effect : MonoBehaviour
         ResistDebuff(0, 0.8f);
         ResistDebuff(4, 1.2f);
     }
+
+    
 }

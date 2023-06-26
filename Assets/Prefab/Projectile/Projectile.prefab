@@ -138,6 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Temp_Speed: 10
   Temp_Lifetime: 5
-  Temp_DamageMulti: 1000
-  Projectile: {fileID: 65972687261184322, guid: 9050fe85fa7034a4c987252382aaba67, type: 3}
+  Temp_DamageMulti: 1
   slowdown: 3

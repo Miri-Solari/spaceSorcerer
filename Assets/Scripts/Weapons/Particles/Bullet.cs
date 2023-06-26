@@ -1,23 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Bullet : MonoBehaviour
+public class Bullet
 {
     public Layer Layer_Out;
     public Layer Layer_Mid;
     public Layer Layer_Inn;
-    public LayerMask WhatIsSolid;
+    public Effect Effect;
 
 
     public (float, El_Type) GiveOutLayerStats()
     {
         if (Layer_Out != null)
         {
-            print(Layer_Out.Elem);
             return (Layer_Out.Dmg, Layer_Out.Elem);
         }
         else return (0, null);
+    }
+
+    public void SetLayerOutDmg(float dmg)
+    {
+        Layer_Out.Dmg = dmg;
     }
 
     public (float, El_Type) GiveMidLayerStats()
@@ -34,11 +40,23 @@ public class Bullet : MonoBehaviour
         else return (0, null);
     }
 
-
-    void Start()
+    public void GiveEffect(Unit Affected)
     {
-
+        if (Effect != null && Affected.IsAffected == false)
+        {
+            Affected.IsAffected = true;
+            Effect.SetAffected(Affected);
+            Effect.gameObject.SetActive(true);
+            Debug.Log($"√ив Ёффект работает {Effect.Multi}");
+            
+        }
     }
 
-    
+    public void SetEffect(Effect effect)
+    {
+        Effect = effect;
+    }
+
+
+
 }
