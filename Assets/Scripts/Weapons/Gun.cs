@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
                 FillTempLayer(tempLayerInn, 1f, 2);
                 FillTempBullet(TempBull, tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
                 Temp.Projectile = TempBull;
-                Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
+                if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
 
                 //print($"{Inventory.Slots[0].GetComponentInChildren<El_Type>().color}");
                 //print(Temp.Projectile.Layer_Inn.Dmg);

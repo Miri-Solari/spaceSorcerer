@@ -56,7 +56,7 @@ public class Base_Partical : MonoBehaviour
             Unit Attacked = collision.collider.GetComponent<Unit>();
             GiveDamage(Attacked);
             Influence(Attacked);
-            Projectile.Effect.gameObject.SetActive(true);
+            if (Projectile.Effect != null) Projectile.Effect.gameObject.SetActive(true);
             Destroy(gameObject);
             
         }
