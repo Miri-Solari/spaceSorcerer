@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -21,7 +18,6 @@ public class Gun : MonoBehaviour
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ+offset);
-
         if(ReloadTime <= 0)
         {
             if (Input.GetMouseButtonDown(0))
@@ -29,7 +25,6 @@ public class Gun : MonoBehaviour
                 Particle.Temp_DamageMulti = DmgMulti;
                 Base_Partical Temp = Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
                 Bullet TempBull = new Bullet();
-
                 Layer tempLayerOut = new Layer();
                 Layer tempLayerMid = new Layer();
                 Layer tempLayerInn = new Layer();
@@ -39,13 +34,6 @@ public class Gun : MonoBehaviour
                 FillTempBullet(TempBull, tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
                 Temp.Projectile = TempBull;
                 if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
-
-                //print($"{Inventory.Slots[0].GetComponentInChildren<El_Type>().color}");
-                //print(Temp.Projectile.Layer_Inn.Dmg);
-                //print(Temp.Projectile.Layer_Mid.Dmg);
-                //print(Temp.Projectile.Layer_Out.Dmg);
-                //print("________________________________________");
-
                 ReloadTime = StartReloadTime;
 
             }
@@ -58,8 +46,6 @@ public class Gun : MonoBehaviour
 
     private Effect ChooseEffect()
     {
-        
-        
         El_Type Out = Inventory.Slots[0].GetComponentInChildren<El_Type>();
         El_Type Mid = Inventory.Slots[1].GetComponentInChildren<El_Type>();
         El_Type Inn = Inventory.Slots[2].GetComponentInChildren<El_Type>();

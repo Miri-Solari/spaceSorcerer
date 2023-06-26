@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
-using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Bullet
 {
@@ -47,7 +42,6 @@ public class Bullet
             Affected.IsAffected = true;
             Effect.SetAffected(Affected);
             Effect.gameObject.SetActive(true);
-            //Debug.Log($"√ив Ёффект работает {Effect.Multi}");
         }
     }
 

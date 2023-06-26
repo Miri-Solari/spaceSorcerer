@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 
 public class Effect : MonoBehaviour
@@ -86,7 +83,6 @@ public class Effect : MonoBehaviour
 
     void Fire()
     {
-        //print($"я ебал вашу машу{Multi}");
         Affected.TakeDamege(Multi*0.5f, Elem);
     }
 

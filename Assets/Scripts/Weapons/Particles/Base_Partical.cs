@@ -70,7 +70,6 @@ public class Base_Partical : MonoBehaviour
     }
     private void Influence(Unit Affected)
     {
-        //print($"инфлюенс работает {Projectile.Effect.Multi}");
         Projectile.GiveEffect(Affected);
     }
 
