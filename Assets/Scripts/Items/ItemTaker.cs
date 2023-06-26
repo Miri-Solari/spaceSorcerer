@@ -17,8 +17,7 @@ public class ItemTaker : MonoBehaviour
                 {
                     TargetInventory.IsFull[i] = true;
                     Instantiate(PrefabInventoryItem, TargetInventory.Slots[i].transform);
-                    El_Type temp = TargetInventory.Slots[i].AddComponent<El_Type>();
-                    temp = PrefabInventoryItem.GetComponent<El_Type>();
+                    
                     Destroy(gameObject);
                     break;
                 }
