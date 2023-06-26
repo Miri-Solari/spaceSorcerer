@@ -136,10 +136,10 @@ Library: lib_burst_generated
 --generate-link-xml=Temp\burst.link.xml
 --output=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
---root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
+--root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.Burst.dll
@@ -301,10 +301,10 @@ Library: lib_burst_generated
 --generate-link-xml=Temp\burst.link.xml
 --output=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
---root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
+--root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
 --root-assembly=F:\Курсач по ТПП\spaceSorcerer\Temp\StagingArea\Data\Managed\Unity.Burst.dll
