@@ -42,13 +42,12 @@ public class Bullet
 
     public void GiveEffect(Unit Affected)
     {
-        if (Effect != null && Affected.IsAffected == false)
+        if (Effect != null)
         {
             Affected.IsAffected = true;
             Effect.SetAffected(Affected);
             Effect.gameObject.SetActive(true);
             Debug.Log($"√ив Ёффект работает {Effect.Multi}");
-            
         }
     }
 

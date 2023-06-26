@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8049367796643054080}
   - component: {fileID: 1712880301759610997}
-  - component: {fileID: -6422237640789458233}
   - component: {fileID: 4785900960003729965}
   - component: {fileID: 3574924486671713276}
   - component: {fileID: 3556392253727844215}
@@ -134,20 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Num_El: 0
---- !u!114 &-6422237640789458233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6323977357230001380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 447597d83927ab74b8598f46b32b62f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Pyro
-  Icon: {fileID: 21300000, guid: 0782a0eeb599bbf4daa315e4b298b018, type: 3}
 --- !u!61 &4785900960003729965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,4 +193,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetInventory: {fileID: 0}
-  SlotButton: {fileID: 7945095793707438609, guid: 9e269655b67e0024a92dc7fe8de3f7ae, type: 3}
+  PrefabInventoryItem: {fileID: 7945095793707438609, guid: 9e269655b67e0024a92dc7fe8de3f7ae, type: 3}
+  PrefabItem: {fileID: 6323977357230001380}
