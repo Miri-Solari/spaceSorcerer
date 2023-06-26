@@ -8,4 +8,9 @@ public class Inventory : MonoBehaviour
 {
     public bool[] IsFull;
     public GameObject[] Slots;
+
+    private void Start()
+    {
+        // реализовать автопиоск полей инвентаря
+    }
 }

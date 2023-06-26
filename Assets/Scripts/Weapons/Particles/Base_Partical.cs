@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.SceneManagement;
+
 using UnityEngine;
 
 public class Base_Partical : MonoBehaviour
@@ -52,7 +48,6 @@ public class Base_Partical : MonoBehaviour
     {
         if (collision.gameObject.tag == "Unit")
         {
-
             Unit Attacked = collision.collider.GetComponent<Unit>();
             GiveDamage(Attacked);
             Influence(Attacked);
