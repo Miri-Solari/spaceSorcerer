@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40a13e0c9d4a672489bc431e44eb5b8a
+guid: 5cf32280857ef2d4f846a7157f75ecd1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,31 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_0
+      name: element_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 94
-        width: 36
-        height: 36
+        x: 4
+        y: 4
+        width: 20
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85325a2950638b94a8a2ce65b9e9b0e0
-      internalID: -1841675732
+      spriteID: 2765e2b436e05e24a9262a73a9d6a277
+      internalID: -1465541543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_1
+      name: element_1
       rect:
         serializedVersion: 2
-        x: 94
-        y: 94
-        width: 68
-        height: 36
+        x: 71
+        y: 3
+        width: 19
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,50 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b9ea908f4eb56d4c8e5dcffda5ff1c9
-      internalID: -464479018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_2
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 30
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1631336b515931547a36394c623c72ba
-      internalID: -948484587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_3
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 30
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e97a3bf33df18ad42a9cd451f94dce57
-      internalID: -909797304
+      spriteID: e7b30be94d815934faef4894101599e5
+      internalID: 1292052192
       vertices: []
       indices: 
       edges: []
@@ -235,10 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_0: -1841675732
-      UI_1: -464479018
-      UI_2: -948484587
-      UI_3: -909797304
+      element_0: -1465541543
+      element_1: 1292052192
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

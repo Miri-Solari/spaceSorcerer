@@ -11,6 +11,38 @@ PrefabInstance:
       propertyPath: Elem
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1712880301759610997, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712880301759610997, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712880301759610997, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: color.g
+      value: 0.23085158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712880301759610997, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: color.r
+      value: 0.4745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095213029079515659, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1292052192, guid: 5cf32280857ef2d4f846a7157f75ecd1, type: 3}
+    - target: {fileID: 6095213029079515659, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_Color.b
+      value: 0.0074759563
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095213029079515659, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21580635
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095213029079515659, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5283019
+      objectReference: {fileID: 0}
     - target: {fileID: 6323977357230001380, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
       propertyPath: m_Name
       value: Geo Variant

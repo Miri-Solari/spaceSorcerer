@@ -38,7 +38,7 @@ public class Base_Partical : MonoBehaviour
         Speed -= Time.deltaTime * slowdown/500;
         if (Speed < 0 | Lifetime < 0)
         {
-            Destroy(Projectile.Effect.gameObject);
+            if (Projectile.Effect != null) Destroy(Projectile.Effect.gameObject);
             Destroy(gameObject);
         }
     }
@@ -75,7 +75,7 @@ public class Base_Partical : MonoBehaviour
     }
     private void Influence(Unit Affected)
     {
-        print($"инфлюенс работает {Projectile.Effect.Multi}");
+        //print($"инфлюенс работает {Projectile.Effect.Multi}");
         Projectile.GiveEffect(Affected);
     }
 

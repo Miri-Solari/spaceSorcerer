@@ -47,7 +47,7 @@ public class Bullet
             Affected.IsAffected = true;
             Effect.SetAffected(Affected);
             Effect.gameObject.SetActive(true);
-            Debug.Log($"√ив Ёффект работает {Effect.Multi}");
+            //Debug.Log($"√ив Ёффект работает {Effect.Multi}");
         }
     }
 

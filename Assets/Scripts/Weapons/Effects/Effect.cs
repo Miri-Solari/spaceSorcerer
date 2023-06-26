@@ -86,7 +86,7 @@ public class Effect : MonoBehaviour
 
     void Fire()
     {
-        print($"я ебал вашу маму{Multi}");
+        //print($"я ебал вашу машу{Multi}");
         Affected.TakeDamege(Multi*0.5f, Elem);
     }
 

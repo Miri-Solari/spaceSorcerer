@@ -6,4 +6,5 @@ public class Layer
 {
     public El_Type Elem;
     public float Dmg;
+
 }

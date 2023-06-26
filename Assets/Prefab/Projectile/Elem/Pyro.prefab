@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1720240112161500022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.3073554, y: -1.3839012, z: 0.48940718}
-  m_LocalScale: {x: 0.5, y: 1.7875, z: 1}
+  m_LocalScale: {x: 3.109452, y: 3.109452, z: 3.109452}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8049367796643054080}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 546c8b27d8dc46f4681c313e7eef15ba, type: 3}
+  m_Sprite: {fileID: -1465541543, guid: 5cf32280857ef2d4f846a7157f75ecd1, type: 3}
   m_Color: {r: 0.8773585, g: 0.40911272, b: 0.09518514, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Num_El: 0
+  color: {r: 0.8773585, g: 0.4969055, b: 0.09518514, a: 0.8}
 --- !u!61 &4785900960003729965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,4 +195,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetInventory: {fileID: 0}
   PrefabInventoryItem: {fileID: 7945095793707438609, guid: 9e269655b67e0024a92dc7fe8de3f7ae, type: 3}
-  PrefabItem: {fileID: 6323977357230001380}

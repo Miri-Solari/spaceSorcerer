@@ -16,12 +16,6 @@ public class Gun : MonoBehaviour
     
 
 
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -44,11 +38,13 @@ public class Gun : MonoBehaviour
                 FillTempLayer(tempLayerInn, 1f, 2);
                 FillTempBullet(TempBull, tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
                 Temp.Projectile = TempBull;
+                Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
 
-                print(Temp.Projectile.Layer_Inn.Dmg);
-                print(Temp.Projectile.Layer_Mid.Dmg);
-                print(Temp.Projectile.Layer_Out.Dmg);
-                print("________________________________________");
+                //print($"{Inventory.Slots[0].GetComponentInChildren<El_Type>().color}");
+                //print(Temp.Projectile.Layer_Inn.Dmg);
+                //print(Temp.Projectile.Layer_Mid.Dmg);
+                //print(Temp.Projectile.Layer_Out.Dmg);
+                //print("________________________________________");
 
                 ReloadTime = StartReloadTime;
 
@@ -64,9 +60,9 @@ public class Gun : MonoBehaviour
     {
         
         
-        El_Type Out = Inventory.Slots[0].GetComponent<El_Type>();
-        El_Type Mid = Inventory.Slots[1].GetComponent<El_Type>();
-        El_Type Inn = Inventory.Slots[2].GetComponent<El_Type>();
+        El_Type Out = Inventory.Slots[0].GetComponentInChildren<El_Type>();
+        El_Type Mid = Inventory.Slots[1].GetComponentInChildren<El_Type>();
+        El_Type Inn = Inventory.Slots[2].GetComponentInChildren<El_Type>();
         if (Out == null) {
             return null;
         }
@@ -155,7 +151,7 @@ public class Gun : MonoBehaviour
 
     private void FillTempLayer(Layer layer, float dmg, int slotNum)
     {
-        layer.Elem = Inventory.Slots[slotNum].GetComponent<El_Type>();
+        layer.Elem = Inventory.Slots[slotNum].GetComponentInChildren<El_Type>();
         layer.Dmg = dmg;
     }
 

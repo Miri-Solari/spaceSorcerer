@@ -113,6 +113,7 @@ MonoBehaviour:
   - 10
   - 10
   - 10
+  IsAffected: 0
 --- !u!114 &9049789041091642419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 3861406225647041985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0578, y: 0.007, z: 0}
-  m_LocalScale: {x: 2.1659284, y: 2.578139, z: 1}
+  m_LocalScale: {x: 1.210845, y: 1.33329, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3861406224738341401}
