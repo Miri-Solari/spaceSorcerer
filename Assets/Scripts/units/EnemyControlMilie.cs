@@ -15,6 +15,7 @@ public class EnemyControlMilie : MonoBehaviour
     private Rigidbody2D rb;
     private Unit Self;
     private float Reload;
+    private bool isFlipped = false;
 
 
     private void Start()
@@ -29,7 +30,8 @@ public class EnemyControlMilie : MonoBehaviour
     private void Update()
     {
         moveSpeed = Self.Speed;
-        Vector2 direction = target.position - transform.position;
+        Vector3 direction = target.position - transform.position;
+        Flip(direction.z);
 
         // Проверяем дистанцию до игрока
         if (direction.magnitude > attackRange)
@@ -60,5 +62,20 @@ public class EnemyControlMilie : MonoBehaviour
     private void Attack()
     {
         target.GetComponent<Unit>().TakeDamege(damage, DamageType);
+    }
+
+    void Flip(float direct)
+    {
+        bool needToMirror = direct > 90f && direct < 270f;
+        if (needToMirror && isFlipped == false)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, -1 * transform.localScale.y, transform.localScale.z);
+            isFlipped = true;
+        }
+        else if (isFlipped && needToMirror == false)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, -1 * transform.localScale.y, transform.localScale.z);
+            isFlipped = false;
+        }
     }
 }

@@ -52,10 +52,9 @@ public class Base_Partical : MonoBehaviour
             GiveDamage(Attacked);
             Influence(Attacked);
             if (Projectile.Effect != null) Projectile.Effect.gameObject.SetActive(true);
-            Destroy(gameObject);
-            
         }
-
+        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
 
