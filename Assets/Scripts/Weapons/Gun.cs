@@ -1,3 +1,5 @@
+using System.Xml.Serialization;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -10,6 +12,7 @@ public class Gun : MonoBehaviour
     public Partical_Form Form;
     public Inventory Inventory;
     private float reloadTime;
+    private bool isFlipped = false;
 
 
     private void Start()
@@ -19,9 +22,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ+offset);
+        TrackingCamera();
         if(reloadTime <= 0)
         {
             if (Input.GetMouseButtonDown(0))
@@ -155,5 +156,28 @@ public class Gun : MonoBehaviour
         Temp.Projectile = TempBull;
         if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
         reloadTime = startReloadTime;
+    }
+
+    void TrackingCamera()
+    {
+        
+        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        Flip();
+    }
+    void Flip()
+    {
+        bool needToMirror = transform.rotation.eulerAngles.z > 90f && transform.rotation.eulerAngles.z < 270f;
+        if (needToMirror && isFlipped == false)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, -1 * transform.localScale.y, transform.localScale.z);
+            isFlipped = true;
+        }
+        else if (isFlipped && needToMirror == false)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, -1 * transform.localScale.y, transform.localScale.z);
+            isFlipped = false;
+        }
     }
 }
