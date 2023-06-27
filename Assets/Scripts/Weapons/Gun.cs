@@ -6,41 +6,32 @@ public class Gun : MonoBehaviour
     public Base_Partical Particle;
     public Transform ShotPoint;
     public float DmgMulti;
-    public float StartReloadTime;
+    private float startReloadTime;
     public Partical_Form Form;
     public Inventory Inventory;
-    private float ReloadTime;
-    
+    private float reloadTime;
 
+
+    private void Start()
+    {
+        startReloadTime = Form.Reload;
+    }
 
     void Update()
     {
         Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ+offset);
-        if(ReloadTime <= 0)
+        if(reloadTime <= 0)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Particle.Temp_DamageMulti = DmgMulti;
-                Base_Partical Temp = Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
-                Bullet TempBull = new Bullet();
-                Layer tempLayerOut = new Layer();
-                Layer tempLayerMid = new Layer();
-                Layer tempLayerInn = new Layer();
-                FillTempLayer(tempLayerOut, 4f, 0);
-                FillTempLayer(tempLayerMid, 2f, 1);
-                FillTempLayer(tempLayerInn, 1f, 2);
-                FillTempBullet(TempBull, tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
-                Temp.Projectile = TempBull;
-                if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
-                ReloadTime = StartReloadTime;
-
+                Fire(Form.CreateParticalStats(Particle.gameObject));
             }
         }
         else
         {
-            ReloadTime -= Time.deltaTime;
+            reloadTime -= Time.deltaTime;
         }
     }
 
@@ -147,5 +138,22 @@ public class Gun : MonoBehaviour
         bullet.Layer_Mid = midL;
         bullet.Layer_Inn = innL;
         bullet.SetEffect(effect);
+    }
+
+    void Fire(float dmg)
+    {
+        Particle.Temp_DamageMulti = DmgMulti*dmg;
+        Base_Partical Temp = Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
+        Bullet TempBull = new Bullet();
+        Layer tempLayerOut = new Layer();
+        Layer tempLayerMid = new Layer();
+        Layer tempLayerInn = new Layer();
+        FillTempLayer(tempLayerOut, 4f, 0);
+        FillTempLayer(tempLayerMid, 2f, 1);
+        FillTempLayer(tempLayerInn, 1f, 2);
+        FillTempBullet(TempBull, tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
+        Temp.Projectile = TempBull;
+        if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
+        reloadTime = startReloadTime;
     }
 }

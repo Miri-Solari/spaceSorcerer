@@ -19,7 +19,7 @@ public class ItemTaker : MonoBehaviour
                     Instantiate(PrefabInventoryItem, TargetInventory.Slots[i].transform);
                     
                     Destroy(gameObject);
-                    break;
+                    return;
                 }
             }
         }

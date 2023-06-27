@@ -31,6 +31,14 @@ PrefabInstance:
       propertyPath: PrefabInventoryItem
       value: 
       objectReference: {fileID: 7509223306792845684, guid: c106cf841ef6ccb47974e436a0ac4aa4, type: 3}
+    - target: {fileID: 4785900960003729965, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785900960003729965, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6095213029079515659, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -97,6 +105,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8049367796643054080, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068709758777220340, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068709758777220340, guid: ae4471f79e2641e4f9569f0cbc579b37, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -11,8 +11,11 @@ public class Drop_item : MonoBehaviour
     public void DropItem()
     {
         var trans = TargetInventory.Slots[i].GetComponentInChildren<Spawn>();
-        trans.SpawnItem(TargetInventory, i);
-        Destroy(trans.gameObject);
-        
+        if (trans != null)
+        {
+            trans.SpawnItem(TargetInventory, i);
+            Destroy(trans.gameObject);
+            return;
+        }
     }
 }

@@ -39,7 +39,7 @@ public class Bullet
     {
         if (Effect != null)
         {
-            Affected.IsAffected = true;
+            Affected.Effect = Effect;
             Effect.SetAffected(Affected);
             Effect.gameObject.SetActive(true);
         }

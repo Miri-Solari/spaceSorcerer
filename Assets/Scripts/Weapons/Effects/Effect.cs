@@ -24,13 +24,19 @@ public class Effect : MonoBehaviour
             Resistances[i] = Affected.Resistances[i];
         }
         Speed = Affected.Speed;
-        print(Elem);
+        if (Affected.IsAffected)
+        {
+            Affected.Effect.time = time;
+            ResetStats();
+            Destroy(gameObject);
+            return;
+        }
+        Affected.IsAffected = true;
         switch (Type)
         {
             case EffectType.Fire:
                 InvokeRepeating(nameof(Fire), 0f, 0.5f); // Add GiveGun
                 break;
-
             case EffectType.Oxy:
                 ResistDebuffAll(1.33f);
                 break;
@@ -57,11 +63,7 @@ public class Effect : MonoBehaviour
     {
         if (time <= 0)
         {
-            for (int i = 0; i < 6; i++)
-            {
-                Affected.Resistances[i] = Resistances[i];
-            }
-            Affected.Speed = Speed;
+            ResetStats();
             Affected.IsAffected = false;
             Destroy(gameObject);
         }
@@ -129,6 +131,15 @@ public class Effect : MonoBehaviour
         Slow(multi * 2);
         ResistDebuff(0, 0.8f);
         ResistDebuff(4, 1.2f);
+    }
+
+    void ResetStats() 
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Affected.Resistances[i] = Resistances[i];
+        }
+        Affected.Speed = Speed;
     }
 
     

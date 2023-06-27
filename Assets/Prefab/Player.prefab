@@ -9,14 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3861406224738341401}
-  - component: {fileID: 3861406224738341402}
   - component: {fileID: 3861406224738341403}
   - component: {fileID: 3861406224738341396}
   - component: {fileID: 3861406224738341400}
   - component: {fileID: 9049789041091642419}
-  - component: {fileID: 7639468929411089591}
-  - component: {fileID: 8863025928904402032}
-  - component: {fileID: 5010644524311234437}
+  - component: {fileID: 2992284674481438077}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -41,22 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &3861406224738341402
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861406224738341397}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.057268854, y: 0.015492179}
-  m_Size: {x: 0.6448565, y: 1.7486987}
-  m_Direction: 0
 --- !u!50 &3861406224738341403
 Rigidbody2D:
   serializedVersion: 4
@@ -109,13 +90,14 @@ MonoBehaviour:
   HP: 100
   Speed: 7
   Weapon: {fileID: 3861406225322777371}
+  Effect: {fileID: 0}
   Resistances:
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
   IsAffected: 0
 --- !u!114 &9049789041091642419
 MonoBehaviour:
@@ -134,8 +116,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!70 &7639468929411089591
-CapsuleCollider2D:
+--- !u!68 &2992284674481438077
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -144,44 +126,35 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14734916, y: -0.45952958}
-  m_Size: {x: 0.20530207, y: 0.7802264}
-  m_Direction: 0
---- !u!70 &8863025928904402032
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861406224738341397}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.28720573, y: -0.45952958}
-  m_Size: {x: 0.2152924, y: 0.7802264}
-  m_Direction: 0
---- !u!58 &5010644524311234437
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861406224738341397}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.06243588, y: 0.8616163}
-  serializedVersion: 2
-  m_Radius: 0.1403692
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.33201253, y: -0.069031596}
+  - {x: 0.35637188, y: 0.318606}
+  - {x: 0.3244682, y: 0.62828255}
+  - {x: 0.14299583, y: 0.7549423}
+  - {x: 0.11429739, y: 0.9483213}
+  - {x: 0.013318828, y: 0.9416953}
+  - {x: -0.05364714, y: 0.7153682}
+  - {x: -0.17373326, y: 0.59707165}
+  - {x: -0.19936909, y: 0.42695865}
+  - {x: -0.18341552, y: 0.1884529}
+  - {x: -0.11405827, y: -0.017478049}
+  - {x: -0.20703879, y: -0.8530763}
+  - {x: -0.13307332, y: -0.86011016}
+  - {x: -0.0029323436, y: 0.00520318}
+  - {x: 0.089704104, y: 0.016480014}
+  - {x: 0.18866709, y: -0.07834256}
+  - {x: 0.32473308, y: -0.8792446}
+  - {x: 0.4084452, y: -0.8690763}
+  - {x: 0.32560432, y: -0.047232136}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &3861406225322777366
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +166,7 @@ GameObject:
   - component: {fileID: 3861406225322777365}
   - component: {fileID: 3861406225322777364}
   - component: {fileID: 3861406225322777371}
+  - component: {fileID: 8896003378821003023}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -256,7 +230,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0782a0eeb599bbf4daa315e4b298b018, type: 3}
   m_Color: {r: 1, g: 0.7311321, b: 0.7311321, a: 1}
   m_FlipX: 0
@@ -284,9 +258,21 @@ MonoBehaviour:
   Particle: {fileID: 1739547192294789593, guid: b634aca19e97f1d4c9c10a562e834a52, type: 3}
   ShotPoint: {fileID: 3861406225906809340}
   DmgMulti: 1
-  StartReloadTime: 0.02
-  Form: {fileID: 0}
+  Form: {fileID: 8896003378821003023}
   Inventory: {fileID: 9049789041091642419}
+--- !u!114 &8896003378821003023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861406225322777366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3ce66af6c028f4d862d80fa03941bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
 --- !u!1 &3861406225647041985
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +345,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a8577855842c1ac44ac4cff9362915e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
