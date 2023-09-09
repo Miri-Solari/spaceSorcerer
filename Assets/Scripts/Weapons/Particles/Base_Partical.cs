@@ -44,7 +44,7 @@ public class Base_Partical : MonoBehaviour
         transform.Translate(Vector2.right * Speed);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Unit")
         {
@@ -53,7 +53,7 @@ public class Base_Partical : MonoBehaviour
             Influence(Attacked);
             if (Projectile.Effect != null) Projectile.Effect.gameObject.SetActive(true);
         }
-        gameObject.SetActive(false);
+        if (Projectile.Effect != null) Projectile.Effect.gameObject.SetActive(true);
         Destroy(gameObject);
     }
 

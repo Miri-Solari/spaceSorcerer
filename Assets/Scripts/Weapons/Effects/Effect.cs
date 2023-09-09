@@ -18,7 +18,12 @@ public class Effect : MonoBehaviour
         Affected = affected;
     }
     void Start()
-    {
+    { 
+        if (Affected == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         for (int i = 0; i < 6; i++)
         {
             Resistances[i] = Affected.Resistances[i];
@@ -72,15 +77,7 @@ public class Effect : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (time <=0) 
-        {
-            
-            Destroy(gameObject);
-        }
         time -= 0.02f;
-        
-        
-        
     }
 
     void Fire()
