@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Layer
 {
-    public El_Type Elem;
+    public TypeElem Elem;
     public float Dmg;
+
+    public Layer(TypeElem elem, float dmg)
+    {
+        Elem = elem;
+        Dmg = dmg;
+    }
 
 }

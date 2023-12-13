@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Effect : MonoBehaviour
 {
-    public El_Type Elem;
+    public TypeElem Elem;
 
     public Unit Affected;
     public EffectType Type;

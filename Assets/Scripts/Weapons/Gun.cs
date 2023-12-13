@@ -5,11 +5,11 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public float offset;
-    public Base_Partical Particle;
+    public BasePartical Particle;
     public Transform ShotPoint;
     public float DmgMulti;
     private float startReloadTime;
-    public Partical_Form Form;
+    public ParticalForm Form;
     public Inventory Inventory;
     private float reloadTime;
     private bool isFlipped = false;
@@ -38,9 +38,9 @@ public class Gun : MonoBehaviour
 
     private Effect ChooseEffect()
     {
-        El_Type Out = Inventory.Slots[0].GetComponentInChildren<El_Type>();
-        El_Type Mid = Inventory.Slots[1].GetComponentInChildren<El_Type>();
-        El_Type Inn = Inventory.Slots[2].GetComponentInChildren<El_Type>();
+        TypeElem Out = Inventory.Slots[0].GetComponentInChildren<TypeElem>();
+        TypeElem Mid = Inventory.Slots[1].GetComponentInChildren<TypeElem>();
+        TypeElem Inn = Inventory.Slots[2].GetComponentInChildren<TypeElem>();
         if (Out == null) {
             return null;
         }
@@ -127,34 +127,16 @@ public class Gun : MonoBehaviour
         return effect;
     }
 
-    private void FillTempLayer(Layer layer, float dmg, int slotNum)
-    {
-        layer.Elem = Inventory.Slots[slotNum].GetComponentInChildren<El_Type>();
-        layer.Dmg = dmg;
-    }
-
-    private void FillTempBullet(Bullet bullet ,Layer outL, Layer midL, Layer innL, Effect effect)
-    {
-        bullet.Layer_Out = outL;
-        bullet.Layer_Mid = midL;
-        bullet.Layer_Inn = innL;
-        bullet.SetEffect(effect);
-    }
-
     void Fire(float dmg)
     {
-        Particle.Temp_DamageMulti = DmgMulti*dmg;
-        Base_Partical Temp = Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
-        Bullet TempBull = new Bullet();
-        Layer tempLayerOut = new Layer();
-        Layer tempLayerMid = new Layer();
-        Layer tempLayerInn = new Layer();
-        FillTempLayer(tempLayerOut, 4f, 0);
-        FillTempLayer(tempLayerMid, 2f, 1);
-        FillTempLayer(tempLayerInn, 1f, 2);
-        FillTempBullet(TempBull, tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
+        Particle.ChangeDmgMilti(DmgMulti*dmg);
+        BasePartical Temp = Instantiate(Particle, ShotPoint.position, ShotPoint.rotation);
+        Layer tempLayerOut = new Layer(Inventory.Slots[0].GetComponentInChildren<TypeElem>(), 4f);
+        Layer tempLayerMid = new Layer(Inventory.Slots[1].GetComponentInChildren<TypeElem>(), 2f);
+        Layer tempLayerInn = new Layer(Inventory.Slots[2].GetComponentInChildren<TypeElem>(), 1f);
+        Bullet TempBull = new Bullet(tempLayerOut, tempLayerMid, tempLayerInn, ChooseEffect());
         Temp.Projectile = TempBull;
-        if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.color;
+        if (tempLayerOut.Elem != null) Temp.GetComponent<SpriteRenderer>().color = tempLayerOut.Elem.Color;
         reloadTime = startReloadTime;
     }
 

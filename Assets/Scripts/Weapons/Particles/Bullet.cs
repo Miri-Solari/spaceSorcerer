@@ -7,7 +7,15 @@ public class Bullet
     public Effect Effect;
 
 
-    public (float, El_Type) GiveOutLayerStats()
+    public Bullet(Layer layer_Out, Layer layer_Mid, Layer layer_Inn, Effect effect)
+    {
+        Layer_Out = layer_Out;
+        Layer_Mid = layer_Mid;
+        Layer_Inn = layer_Inn;
+        Effect = effect;
+    }
+
+    public (float, TypeElem) GiveOutLayerStats()
     {
         if (Layer_Out != null)
         {
@@ -16,19 +24,14 @@ public class Bullet
         else return (0, null);
     }
 
-    public void SetLayerOutDmg(float dmg)
-    {
-        Layer_Out.Dmg = dmg;
-    }
-
-    public (float, El_Type) GiveMidLayerStats()
+    public (float, TypeElem) GiveMidLayerStats()
     {
         if(Layer_Mid != null) 
             return (Layer_Mid.Dmg, Layer_Mid.Elem);
         else return (0, null);
     }
 
-    public (float, El_Type) GiveInnLayerStats()
+    public (float, TypeElem) GiveInnLayerStats()
     {
         if (Layer_Inn != null)
             return (Layer_Inn.Dmg, Layer_Inn.Elem);
@@ -44,12 +47,4 @@ public class Bullet
             Effect.gameObject.SetActive(true);
         }
     }
-
-    public void SetEffect(Effect effect)
-    {
-        Effect = effect;
-    }
-
-
-
 }

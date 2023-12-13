@@ -7,7 +7,7 @@ public class EnemyControlMilie : MonoBehaviour
     
     public float attackRange = 1f; // Дальность атаки противника
     public float damage = 10; // Урон атаки противника
-    public El_Type DamageType;
+    public TypeElem DamageType;
     public float startReload;
     public float moveSpeed { get; private set; } // Скорость движения противника
 

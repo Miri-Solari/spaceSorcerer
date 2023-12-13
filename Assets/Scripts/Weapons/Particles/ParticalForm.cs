@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Partical_Form : MonoBehaviour
+public class ParticalForm : MonoBehaviour
 {
     public Form_type Type;
     public float Reload { get; private set; }

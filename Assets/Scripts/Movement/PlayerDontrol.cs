@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player_control : MonoBehaviour
+public class PlayerDontrol : MonoBehaviour
 {
     public ControlType controlType;
     public Joystick joystick;

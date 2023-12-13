@@ -27,7 +27,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void TakeDamege(double dmg, El_Type Elem)
+    public void TakeDamege(double dmg, TypeElem Elem)
     {
         if (Elem != null)
         {
@@ -35,9 +35,19 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public Gun GiveGun()
+    public Gun GetGun()
     {
         return Weapon;
+    }
+
+    public void SetAffected(bool temp)
+    {
+        IsAffected = temp;
+    }
+
+    public bool IsItAffected() 
+    {
+        return IsAffected;
     }
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CameraOnPlayer : MonoBehaviour
+public class CameraControl : MonoBehaviour
 {
     public Transform target; // —сылка на объект игрока
     public float smoothSpeed = 0.125f; // —корость плавного следовани€ к цели
